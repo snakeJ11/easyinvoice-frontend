@@ -10,7 +10,7 @@ export const useAuthRedirect = () => {
   useEffect(() => {
     const t = localStorage.getItem('token')
     setToken(t)
-    console.log('Token:', t)
+    console.log('Token:', token)
 
     if (!t) {
       router.replace('/login')
