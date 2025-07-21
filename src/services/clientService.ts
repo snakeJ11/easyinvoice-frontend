@@ -3,7 +3,7 @@ import api from './api'
 
       const userId= localStorage.getItem('userInvoice')
 
-export const createClient = async (data: Client) => {
+export const createClient = async (data: form) => {
   const res = await api.post(`/clients/create/${userId}`, data)
   return res.data
 }
