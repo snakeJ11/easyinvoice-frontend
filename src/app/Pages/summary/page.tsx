@@ -20,16 +20,16 @@ export default function SummaryPage() {
   }
 
 
-  const handleDownloadPDF = async () => {
-  const blob = await downloadMonthlyPdf(month,year)
-  const url = window.URL.createObjectURL(new Blob([blob], { type: 'application/pdf' }))
-  const link = document.createElement('a')
-  link.href = url
-  link.setAttribute('download', `Resumen_${month}_${year}.pdf`)
-  document.body.appendChild(link)
-  link.click()
-  link.remove()
-  }
+  // const handleDownloadPDF = async () => {
+  // const blob = await downloadMonthlyPdf(month,year)
+  // const url = window.URL.createObjectURL(new Blob([blob], { type: 'application/pdf' }))
+  // const link = document.createElement('a')
+  // link.href = url
+  // link.setAttribute('download', `Resumen_${month}_${year}.pdf`)
+  // document.body.appendChild(link)
+  // link.click()
+  // link.remove()
+  // }
 
  
 
@@ -72,13 +72,13 @@ export default function SummaryPage() {
         <p>✅ Total pagado: <strong>${data?.paidInvoices?.toFixed(2) || '0.00'}</strong></p>
         <p>🕒 Total pendiente: <strong>${data?.pendingInvoices?.toFixed(2) || '0.00'}</strong></p>
       </div>
-
+{/* 
    <button
   onClick={handleDownloadPDF}
   className="mt-6 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
 >
   📄 Exportar como PDF
-</button>
+</button> */}
 
     </div>
   )
