@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEventHandler, useEffect, useState } from 'react'
+import {  useEffect, useState } from 'react'
 import { getInvoicesByStatus, getAllInvoices } from '@/services/invoiceService'
 import Link from 'next/link'
 import { Client, Invoice } from '@/types/Facturas.types'

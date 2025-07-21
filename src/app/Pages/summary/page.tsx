@@ -3,11 +3,12 @@
 import { useEffect, useState } from 'react'
 import { downloadMonthlyPdf, getMonthlySummary } from '@/services/invoiceService'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts'
+import { graficosType } from '@/types/Facturas.types'
 
 export default function SummaryPage() {
   const [month, setMonth] = useState(new Date().getMonth() + 1)
   const [year, setYear] = useState(new Date().getFullYear())
-  const [data, setData] = useState<any>()
+  const [data, setData] = useState<graficosType>()
 
   useEffect(() => {
     fetchData()

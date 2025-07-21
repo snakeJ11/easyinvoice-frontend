@@ -61,3 +61,11 @@ export type invoiceUpdate = {
       status: string | undefined,
       date: Date | undefined,
     }
+
+
+    export type graficosType = {
+      days: string[];
+         totalInvoices: number
+       paidInvoices: number,
+       pendingInvoices: number
+    }

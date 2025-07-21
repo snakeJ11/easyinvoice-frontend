@@ -1,4 +1,4 @@
-import { Client, form } from '@/types/Facturas.types'
+import { form } from '@/types/Facturas.types'
 import api from './api'
 
       const userId= localStorage.getItem('userInvoice')

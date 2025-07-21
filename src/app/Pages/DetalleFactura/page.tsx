@@ -19,7 +19,7 @@ export default function InvoiceDetail() {
       getInvoiceById(id as string)
         .then(setInvoice)
         .finally(() => setLoading(false))
-
+console.log(loading)
     }
   }, [id, router])
 

@@ -28,6 +28,7 @@ export default function Login() {
       toast.success('Inicio de sesión exitoso')
       router.push('/Pages/summary')
     } catch (err) {
+      console.error(err)
       toast.error('Credenciales inválidas')
       
     } finally {

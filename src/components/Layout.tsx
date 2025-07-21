@@ -1,13 +1,11 @@
 'use client'
 
-import { useTheme } from 'next-themes'
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import toast from 'react-hot-toast'
 import { useEffect, useState } from 'react'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const { theme, setTheme } = useTheme()
   const pathname = usePathname()
   const router = useRouter()
 
