@@ -1,9 +1,9 @@
 import { Invoice, invoiceUpdate } from '@/types/Facturas.types'
 import api from './api'
 
-  const userId= localStorage.getItem('userInvoice')
 
 export const createInvoice = async (data: Invoice) => {
+  const userId= localStorage.getItem('userInvoice')
   const res = await api.post(`/invoices/create/${userId}`, data)
   return res.data
 }
@@ -35,6 +35,7 @@ export const getMonthlySummary = async (month: number, year: number, ) => {
 
 
 export const downloadMonthlyPdf = async (month: number, year: number, ) => {
+  const userId= localStorage.getItem('userInvoice')
   const res = await api.get(`/invoices/summary/${month}/${year}/${userId}/pdf`, )
   return res.data
 }

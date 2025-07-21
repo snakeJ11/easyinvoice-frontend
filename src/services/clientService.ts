@@ -1,9 +1,10 @@
 import { form } from '@/types/Facturas.types'
 import api from './api'
 
-      const userId= localStorage.getItem('userInvoice')
 
 export const createClient = async (data: form) => {
+        const userId= localStorage.getItem('userInvoice')
+
   const res = await api.post(`/clients/create/${userId}`, data)
   return res.data
 }

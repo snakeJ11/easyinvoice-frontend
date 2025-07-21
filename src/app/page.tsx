@@ -1,3 +1,5 @@
+'use client';
+
 // app/page.tsx
 import { redirect } from 'next/navigation'
 
