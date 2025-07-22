@@ -85,52 +85,58 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         </label>
 
         <div className="space-y-3">
-       {items.map((item, i) => (
+{items.map((item, i) => (
   <div
     key={i}
-    className="grid grid-cols-1 md:grid-cols-12 gap-2 items-center p-4 border rounded mb-4 bg-white dark:bg-gray-800"
+    className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 border rounded mb-4 bg-white dark:bg-gray-800"
   >
     {/* Descripción */}
-    <label className="md:col-span-2 font-medium text-sm text-gray-700 dark:text-gray-200">
-      Descripción
-    </label>
-    <input
-      type="text"
-      className="md:col-span-4 col-span-1 p-2 rounded bg-gray-100 dark:bg-gray-700"
-      placeholder="Descripción"
-      value={item.description}
-      onChange={(e) => handleItemChange(i, 'description', e.target.value)}
-      required
-    />
+    <div className="flex flex-col col-span-1">
+      <label className="mb-1 text-sm font-medium text-gray-700 dark:text-gray-200">
+        Descripción
+      </label>
+      <input
+        type="text"
+        className="p-2 rounded bg-gray-100 dark:bg-gray-700"
+        placeholder="Descripción"
+        value={item.description}
+        onChange={(e) => handleItemChange(i, 'description', e.target.value)}
+        required
+      />
+    </div>
 
     {/* Cantidad */}
-    <label className="md:col-span-2 font-medium text-sm text-gray-700 dark:text-gray-200">
-      Cantidad
-    </label>
-    <input
-      type="number"
-      className="md:col-span-2 col-span-1 p-2 rounded bg-gray-100 dark:bg-gray-700"
-      placeholder="Cantidad"
-      value={item.quantity}
-      onChange={(e) => handleItemChange(i, 'quantity', e.target.value)}
-      required
-    />
+    <div className="flex flex-col col-span-1">
+      <label className="mb-1 text-sm font-medium text-gray-700 dark:text-gray-200">
+        Cantidad
+      </label>
+      <input
+        type="number"
+        className="p-2 rounded bg-gray-100 dark:bg-gray-700"
+        placeholder="Cantidad"
+        value={item.quantity}
+        onChange={(e) => handleItemChange(i, 'quantity', e.target.value)}
+        required
+      />
+    </div>
 
     {/* Precio */}
-    <label className="md:col-span-1 font-medium text-sm text-gray-700 dark:text-gray-200">
-      Precio
-    </label>
-    <input
-      type="number"
-      className="md:col-span-1 col-span-1 p-2 rounded bg-gray-100 dark:bg-gray-700"
-      placeholder="Precio"
-      value={item.unitPrice}
-      onChange={(e) => handleItemChange(i, 'unitPrice', e.target.value)}
-      required
-    />
+    <div className="flex flex-col col-span-1">
+      <label className="mb-1 text-sm font-medium text-gray-700 dark:text-gray-200">
+        Precio
+      </label>
+      <input
+        type="number"
+        className="p-2 rounded bg-gray-100 dark:bg-gray-700"
+        placeholder="Precio"
+        value={item.unitPrice}
+        onChange={(e) => handleItemChange(i, 'unitPrice', e.target.value)}
+        required
+      />
+    </div>
 
     {/* Botón quitar */}
-    <div className="col-span-1 text-right mt-2 md:mt-0">
+    <div className="flex items-end justify-end col-span-1">
       <button
         type="button"
         onClick={() => removeItem(i)}
@@ -141,6 +147,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     </div>
   </div>
 ))}
+
 
           <button
             type="button"
