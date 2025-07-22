@@ -27,6 +27,8 @@ const links = [
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col">
+                     <title>EasyInvoice</title>
+
       <nav className="bg-white dark:bg-gray-800 shadow px-6 py-4 flex justify-between items-center">
         <div className="flex gap-6 items-center">
           <h1 className="font-bold text-xl text-blue-600">EasyInvoice</h1>

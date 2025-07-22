@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react'
-import { downloadMonthlyPdf, getMonthlySummary } from '@/services/invoiceService'
+import {  getMonthlySummary } from '@/services/invoiceService'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts'
 import { graficosType } from '@/types/Facturas.types'
 
