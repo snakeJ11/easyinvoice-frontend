@@ -92,14 +92,17 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 className="col-span-5 p-2 rounded bg-gray-100 dark:bg-gray-700"
                 placeholder="Descripción"
                 value={item.description}
+                title='Descripción del ítem'
                 onChange={(e) => handleItemChange(i, 'description', e.target.value)}
                 required
               />
+              
               <input
                 type="number"
                 className="col-span-2 p-2 rounded bg-gray-100 dark:bg-gray-700"
                 placeholder="Cantidad"
                 value={item.quantity}
+                title='Cantidad del ítem'
                 onChange={(e) => handleItemChange(i, 'quantity', e.target.value)}
                 required
               />
@@ -108,6 +111,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 className="col-span-3 p-2 rounded bg-gray-100 dark:bg-gray-700"
                 placeholder="Precio unitario"
                 value={item.unitPrice}
+                title='Precio unitario del ítem'
                 onChange={(e) => handleItemChange(i, 'unitPrice', e.target.value)}
                 required
               />
