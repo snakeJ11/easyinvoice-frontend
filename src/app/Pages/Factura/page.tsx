@@ -85,45 +85,63 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         </label>
 
         <div className="space-y-3">
-          {items.map((item, i) => (
-            <div key={i} className="grid grid-cols-12 gap-2">
-              <input
-                type="text"
-                className="col-span-5 p-2 rounded bg-gray-100 dark:bg-gray-700"
-                placeholder="Descripción"
-                value={item.description}
-                title='Descripción del ítem'
-                onChange={(e) => handleItemChange(i, 'description', e.target.value)}
-                required
-              />
-              
-              <input
-                type="number"
-                className="col-span-2 p-2 rounded bg-gray-100 dark:bg-gray-700"
-                placeholder="Cantidad"
-                value={item.quantity}
-                title='Cantidad del ítem'
-                onChange={(e) => handleItemChange(i, 'quantity', e.target.value)}
-                required
-              />
-              <input
-                type="number"
-                className="col-span-3 p-2 rounded bg-gray-100 dark:bg-gray-700"
-                placeholder="Precio unitario"
-                value={item.unitPrice}
-                title='Precio unitario del ítem'
-                onChange={(e) => handleItemChange(i, 'unitPrice', e.target.value)}
-                required
-              />
-              <button
-                type="button"
-                onClick={() => removeItem(i)}
-                className="col-span-2 text-red-600 hover:underline"
-              >
-                Quitar
-              </button>
-            </div>
-          ))}
+       {items.map((item, i) => (
+  <div
+    key={i}
+    className="grid grid-cols-1 md:grid-cols-12 gap-2 items-center p-4 border rounded mb-4 bg-white dark:bg-gray-800"
+  >
+    {/* Descripción */}
+    <label className="md:col-span-2 font-medium text-sm text-gray-700 dark:text-gray-200">
+      Descripción
+    </label>
+    <input
+      type="text"
+      className="md:col-span-4 col-span-1 p-2 rounded bg-gray-100 dark:bg-gray-700"
+      placeholder="Descripción"
+      value={item.description}
+      onChange={(e) => handleItemChange(i, 'description', e.target.value)}
+      required
+    />
+
+    {/* Cantidad */}
+    <label className="md:col-span-2 font-medium text-sm text-gray-700 dark:text-gray-200">
+      Cantidad
+    </label>
+    <input
+      type="number"
+      className="md:col-span-2 col-span-1 p-2 rounded bg-gray-100 dark:bg-gray-700"
+      placeholder="Cantidad"
+      value={item.quantity}
+      onChange={(e) => handleItemChange(i, 'quantity', e.target.value)}
+      required
+    />
+
+    {/* Precio */}
+    <label className="md:col-span-1 font-medium text-sm text-gray-700 dark:text-gray-200">
+      Precio
+    </label>
+    <input
+      type="number"
+      className="md:col-span-1 col-span-1 p-2 rounded bg-gray-100 dark:bg-gray-700"
+      placeholder="Precio"
+      value={item.unitPrice}
+      onChange={(e) => handleItemChange(i, 'unitPrice', e.target.value)}
+      required
+    />
+
+    {/* Botón quitar */}
+    <div className="col-span-1 text-right mt-2 md:mt-0">
+      <button
+        type="button"
+        onClick={() => removeItem(i)}
+        className="text-red-600 hover:underline text-sm"
+      >
+        Quitar
+      </button>
+    </div>
+  </div>
+))}
+
           <button
             type="button"
             onClick={addItem}
